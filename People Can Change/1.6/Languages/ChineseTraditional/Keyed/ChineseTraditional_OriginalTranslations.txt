@@ -1,0 +1,28 @@
+---used in settings (C#)---
+"People Can Change"
+"Current value: " ="當前值："
+"Max traits a pawn can have (if a pawn has more traits than this, they may lose or change traits but not gain any; note that on higher settings some traits may not appear in the Bio tab):"=“可擁有的最高特性（如果殖民者要具有更多特性，可能會失去或改變特性，但不會獲得任何特性；請注意，在高級設置下，某些特性可能不會出現在選項卡中）：”
+"Minimum traits a pawn can have:"=“可擁有的最低特性：”
+"Allow (vanilla) sexuality traits to change"="允許(系統)性向改變"
+"Use modded traits"="使用mod特性"
+"Select individual traits (advanced settings)..."=“選擇單個特性（高級設置）...”
+"Use simple trait filter (simple settings)..."=“使用特性簡單過濾器（簡單設置）...”
+"Traits listed below WILL be eligible to change randomly:"=“以下列出的特性將可以隨機更改：”
+"Traits listed below WILL NOT be eligible to change randomly:"=“以下列出的特性將不能隨機更改：”
+"Show..."=“顯示...”
+"Hide..."=“隱藏...”
+"(note that some traits will still change based on pawns' circumstances, such as natural mood offset)"=“（請注意，某些特性仍會根據角色的情況而改變，例如自然的情緒偏移）”
+ 
+---used in-game (C#), you don't have to translate anything in brackets because it'll already be translated---
+"Trait changed"=“特性改變了”
+"Colonist [NAME OF PAWN] has gained the trait [NAME OF TRAIT]."=“殖民者[NAME OF PAWN]獲得了特性:[NAME OF TRAIT]。”
+"Colonist [NAME OF PAWN] has lost the trait [NAME OF TRAIT]."=“殖民者[NAME OF PAWN]喪失了特性:[NAME OF TRAIT]。”
+"Trait: Optimist"=“特性：樂觀主義者”
+"Trait: Depressive"=“特性：抑鬱”
+"Trait: Cannibal"=“特性：食人族”
+"Trait: Transhumanist"=“特性：義體主義”
+"Trait removed: Body purist"=“遺忘特性：人體主義”
+"Colonist [NAME OF PAWN]'s long happiness has convinced them that life is pretty good, even out here on the Rim. They are now an optimist!"=“殖民者[NAME OF PAWN]過了長期的幸福生活使他們相信生活非常美好，即使是在這星球也是如此。{PAWN_possessive}現在是樂觀主義者！”
+"Colonist [NAME OF PAWN]'s constant stress has made their depression become permanent."=“殖民者[NAME OF PAWN]面對接踵而來的壓力使{PAWN_possessive}永久抑鬱不已。”
+"Colonist [NAME OF PAWN] has realized after eating human flesh... that they actually sort of like it."=“殖民者[NAME OF PAWN]吃了人肉後才意識到{PAWN_possessive}其實有點喜歡它。”
+"Colonist [NAME OF PAWN]'s time with their prosthetic limb has made them accustomed to an improved body, and although they're not a huge fan, they don't hate it any longer."="殖民者[NAME OF PAWN]安裝已久的義肢使{PAWN_possessive}習慣了身體的改善，儘管不是狂熱粉絲，但不再討厭它了。"

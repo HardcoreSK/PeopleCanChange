@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using RimWorld;
+using UnityEngine;
+using Verse;
+
+namespace PCC_Code
+{
+    public class PCCSettings : ModSettings
+    {
+		public float maxTraits = 4;
+        public float minTraits = 1;
+        public bool sexualitiesAllowedToChange = false; // by verdict of friends who know more about social justice than me
+        public bool moddedTraits = true;
+        public override void ExposeData()
+        {
+            base.ExposeData();
+			Scribe_Values.Look(ref maxTraits, "maxTraits", 4f);
+            Scribe_Values.Look(ref minTraits, "minTraits", 1f);
+            Scribe_Values.Look(ref sexualitiesAllowedToChange, "gayAllowedToChange", false); // the tag is called gay as a holdover from previous versions, so it's save-compatible
+            Scribe_Values.Look(ref moddedTraits, "moddedTraits", true);
+        }
+    }
+    class PCC_Mod : Mod
+    {
+        public static PCCSettings settings;
+        public PCC_Mod(ModContentPack content) : base(content)
+        {
+            settings = GetSettings<PCCSettings>();
+        }
+        public override string SettingsCategory() => "People Can Change";
+        public override void DoSettingsWindowContents(Rect inRect)
+        {
+            Listing_Standard ls = new Listing_Standard();
+            ls.Begin(inRect);
+            ls.Label("Max traits a pawn can have (if a pawn has more traits than this, they may lose or change traits but not gain any; note that on higher settings some traits may not appear in the Bio tab):");
+            ls.Label("Current value: " + ((int)settings.maxTraits).ToString());
+            settings.maxTraits = ls.Slider(settings.maxTraits, 0, 6);
+            ls.Label("Min traits a pawn can have:");
+            ls.Label("Current value: " + ((int)settings.minTraits).ToString());
+            settings.minTraits = ls.Slider(settings.minTraits, 0, 3);
+            ls.CheckboxLabeled("Allow (vanilla) sexuality traits to change", ref settings.sexualitiesAllowedToChange);
+            ls.CheckboxLabeled("Use modded traits", ref settings.moddedTraits);
+            settings.Write();
+            ls.End();
+
+
+        }
+    }
+}

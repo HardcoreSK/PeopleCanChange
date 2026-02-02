@@ -1,0 +1,49 @@
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/PCC_Code/PCC_Code/bin/Debug/PCC_Code.dll
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/PCC_Code/PCC_Code/bin/Debug/PCC_Code.pdb
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/PCC_Code/PCC_Code/bin/Debug/Assembly-CSharp.dll
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/PCC_Code/PCC_Code/bin/Debug/UnityEngine.dll
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/PCC_Code/PCC_Code/bin/Debug/TextMeshPro-1.0.55.56.0b11.dll
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/PCC_Code/PCC_Code/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/PCC_Code/PCC_Code/bin/Debug/System.Xml.dll
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/PCC_Code/PCC_Code/bin/Debug/UnityEngine.UI.dll
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/PCC_Code/PCC_Code/bin/Debug/System.Xml.Linq.dll
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/PCC_Code/PCC_Code/bin/Debug/UnityEngine.dll.mdb
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/PCC_Code/PCC_Code/obj/Debug/PCC_Code.csprojResolveAssemblyReference.cache
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/PCC_Code/PCC_Code/obj/Debug/PCC_Code.csproj.CoreCompileInputs.cache
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/PCC_Code/PCC_Code/obj/Debug/PCC_Code.dll
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/PCC_Code/PCC_Code/obj/Debug/PCC_Code.pdb
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Assemblies2/PCC_Code.dll
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Assemblies2/PCC_Code.pdb
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Source/PCC_Code/PCC_Code/obj/Debug/PCC_Code.dll
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Source/PCC_Code/PCC_Code/obj/Debug/PCC_Code.pdb
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Source/Assemblies/PCC_Code.dll
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Source/Assemblies/PCC_Code.pdb
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Assemblies/PCC_Code.dll
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Assemblies/PCC_Code.pdb
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Source/PCC_Code/PCC_Code/obj/Debug/PCC_Code.csprojAssemblyReference.cache
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/1.1/Assemblies/PCC_Code.dll
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/1.1/Assemblies/PCC_Code.pdb
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Source/PCC_Code/PCC_Code/obj/Debug/PCC_Code.csproj.CoreCompileInputs.cache
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Source/PCC_Code/PCC_Code/obj/Debug/PCC_Code.csproj.CopyComplete
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/1.2/Assemblies/PCC_Code.dll
+/Users/arden/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/1.2/Assemblies/PCC_Code.pdb
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/1.2/Assemblies/PCC_Code.dll
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/1.2/Assemblies/PCC_Code.pdb
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Source/PCC_Code/PCC_Code/obj/Debug/PCC_Code.csproj.AssemblyReference.cache
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Source/PCC_Code/PCC_Code/obj/Debug/PCC_Code.csproj.CoreCompileInputs.cache
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Source/PCC_Code/PCC_Code/obj/Debug/PCC_Code.dll
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Source/PCC_Code/PCC_Code/obj/Debug/PCC_Code.pdb
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/1.2.1/Assemblies/PCC_Code.dll
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/1.2.1/Assemblies/PCC_Code.pdb
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Assemblies/PCC_Code.dll
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/Assemblies/PCC_Code.pdb
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/1.3/Assemblies/PCC_Code.dll
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/1.3/Assemblies/PCC_Code.pdb
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/1.4/Assemblies/PCC_Code.dll
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/1.4/Assemblies/PCC_Code.pdb
+/Users/ardenkolodner/Desktop/Coding/PeopleCanChange/People Can Change/1.4/Assemblies/PCC_Code.dll
+/Users/ardenkolodner/Desktop/Coding/PeopleCanChange/People Can Change/1.4/Assemblies/PCC_Code.pdb
+/Users/ardenkolodner/Desktop/Coding/PeopleCanChange/People Can Change/Source/PCC_Code/PCC_Code/obj/Debug/PCC_Code.csproj.AssemblyReference.cache
+/Users/ardenkolodner/Desktop/Coding/PeopleCanChange/People Can Change/Source/PCC_Code/PCC_Code/obj/Debug/PCC_Code.csproj.CoreCompileInputs.cache
+/Users/ardenkolodner/Desktop/Coding/PeopleCanChange/People Can Change/Source/PCC_Code/PCC_Code/obj/Debug/PCC_Code.dll
+/Users/ardenkolodner/Desktop/Coding/PeopleCanChange/People Can Change/Source/PCC_Code/PCC_Code/obj/Debug/PCC_Code.pdb

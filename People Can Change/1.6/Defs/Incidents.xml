@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IncidentDef>
+		<defName>TraitChange</defName>
+		<label>trait change</label>
+		<baseChance>.6</baseChance>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+			<li>Map_TempIncident</li>
+			<li>Map_Misc</li>
+			<li>Map_RaidBeacon</li>
+		</targetTags>
+		<category>Misc</category>
+		<workerClass>PCC_Code.Worker_ChangeTrait</workerClass>
+	</IncidentDef>
+	<IncidentDef>
+		<defName>TraitRemove</defName>
+		<label>trait removed</label>
+		<baseChance>.6</baseChance>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+			<li>Map_TempIncident</li>
+			<li>Map_Misc</li>
+			<li>Map_RaidBeacon</li>
+		</targetTags>
+		<category>Misc</category>
+		<workerClass>PCC_Code.Worker_RemoveTrait</workerClass>
+	</IncidentDef>
+</Defs>

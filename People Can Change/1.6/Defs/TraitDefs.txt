@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<TraitDef>
+		<defName>Hobbyist</defName>
+		<commonality>0.2</commonality>
+		<degreeDatas>
+			<li>
+				<label>hobbyist</label>
+				<description>NAME likes to try new and different things. HECAP will flit from passion to passion, trying out things for a bit, then moving on.</description>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+</Defs>

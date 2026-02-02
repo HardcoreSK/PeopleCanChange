@@ -1,0 +1,130 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using RimWorld;
+using UnityEngine;
+using Verse;
+
+namespace PCC_Code
+{
+    public class PCCSettings : ModSettings
+    {
+		public float maxTraits = 4;
+        public float minTraits = 1;
+        public bool sexualitiesAllowedToChange = false; // defaults to false by verdict of friends more into social justice than me
+        public bool moddedTraits = true;
+        public bool usingNewSelector = false;
+        public List<string> disabledTraits = new List<string>();
+        public List<TraitDef> disabledDefs = new List<TraitDef>();
+        //public List<string> unloadedTraits = new List<string>();
+        public bool hideAllowed = true; // not a saved value, just used for remembering whether the list is minimized, always starts minimized to ease clutter
+        public bool hideDisabled = true; // see above
+        public override void ExposeData()
+        {
+            base.ExposeData();
+			Scribe_Values.Look(ref maxTraits, "maxTraits", 4f);
+            Scribe_Values.Look(ref minTraits, "minTraits", 1f);
+            Scribe_Values.Look(ref sexualitiesAllowedToChange, "gayAllowedToChange", false); // the tag is called gay as a holdover from previous versions, so it's save-compatible
+            Scribe_Values.Look(ref moddedTraits, "moddedTraits", true);
+            Scribe_Values.Look(ref usingNewSelector, "usingNewSelector", false);
+            Scribe_Collections.Look(ref disabledTraits, "disabledTraits", LookMode.Value);
+            //Scribe_Collections.Look(ref unloadedTraits, "unloadedTraits", LookMode.Value);
+        }
+    }
+    class PCC_Mod : Mod
+    {
+        private bool recheckDefList = true;
+        public static Vector2 scrollPosition = new Vector2();
+        public static PCCSettings settings;
+        public PCC_Mod(ModContentPack content) : base(content)
+        {
+            settings = GetSettings<PCCSettings>();
+        }
+        public override string SettingsCategory() => "People Can Change";
+        public override void DoSettingsWindowContents(Rect inRect) {
+            Listing_Standard ls = new Listing_Standard();
+            Rect rect = new Rect(inRect.x, inRect.y, inRect.width, inRect.height);
+            Rect rect2 = new Rect(0f, 0f, inRect.width - 16f, inRect.height + DefDatabase<TraitDef>.AllDefs.Count() * 55); //  + DefDatabase<TraitDef>.AllDefs.Count() * 55
+            Widgets.BeginScrollView(rect, ref scrollPosition, rect2, true);
+            ls.Begin(rect2);
+            ls.Label("Max traits a pawn can have (if a pawn has more traits than this, they may lose or change traits but not gain any; note that on higher settings some traits may not appear in the Bio tab):");
+            ls.Label("Current value: " + ((int)settings.maxTraits).ToString());
+            settings.maxTraits = ls.Slider(settings.maxTraits, 0, 6);
+            ls.Label("Min traits a pawn can have:");
+            ls.Label("Current value: " + ((int)settings.minTraits).ToString());
+            settings.minTraits = ls.Slider(settings.minTraits, 0, 3);
+            if (!settings.usingNewSelector) { // old trait selector
+                ls.CheckboxLabeled("Allow (vanilla) sexuality traits to change", ref settings.sexualitiesAllowedToChange);
+                ls.CheckboxLabeled("Use modded traits", ref settings.moddedTraits);
+                if (ls.ButtonText("Select individual traits (advanced settings)...")) {
+                    settings.usingNewSelector = true;
+                }
+            }
+            else { // new trait selector
+                if (recheckDefList) {
+                    settings.disabledDefs = new List<TraitDef>();
+                    foreach (string defName in settings.disabledTraits) {
+                        TraitDef add = DefDatabase<TraitDef>.GetNamedSilentFail(defName);
+                        if (add != null) {
+                            settings.disabledDefs.Add(add);
+                        }
+                        recheckDefList = false;
+                    }
+                }
+                ls.Label("Traits listed below WILL be eligible to change randomly:");
+                if (settings.hideAllowed) {
+                    if (ls.ButtonText("Show...")) {
+                        settings.hideAllowed = false;
+                    }
+                }
+                else {
+                    if (ls.ButtonText("Hide...")) {
+                        settings.hideAllowed = true;
+                    }
+                    GUI.color = Color.green;
+                    foreach (TraitDef def in DefDatabase<TraitDef>.AllDefs) {
+                        if (!settings.disabledDefs.Contains(def)) {
+                            //ls.Label(def.defName + " : " + def.label);
+                            if (ls.ButtonText(def.defName)) {
+                                settings.disabledTraits.Add(def.defName);
+                                recheckDefList = true;
+                            }
+                        }
+                    }
+                    GUI.color = Color.white;
+                }
+                ls.Label("Traits listed below WILL NOT be eligible to change randomly:");
+                List<TraitDef> toRemove = new List<TraitDef>();
+                if (settings.hideDisabled) {
+                    if (ls.ButtonText("Show...")) {
+                        settings.hideDisabled = false;
+                    }
+                }
+                else {
+                    if (ls.ButtonText("Hide...")) {
+                        settings.hideDisabled = true;
+                    }
+                    GUI.color = Color.red;
+                    foreach (TraitDef def in settings.disabledDefs) {
+                        //ls.Label(def.defName + " : " + def.label);
+                        if (ls.ButtonText(def.defName)) {
+                            toRemove.Add(def); // can't modify disabledTraits within the foreach loop
+                            recheckDefList = true;
+                        }
+                    }
+                    GUI.color = Color.white;
+                }
+                foreach (TraitDef def in toRemove) { settings.disabledTraits.Remove(def.defName); settings.disabledDefs.Remove(def); }
+                ls.Label("(note that some traits will still change based on pawns' circumstances, such as natural mood offset)");
+                if (ls.ButtonText("Use simple trait filter (simple settings)...")) {
+                    settings.usingNewSelector = false;
+                }
+            }
+            settings.Write();
+            ls.End();
+            Widgets.EndScrollView();
+        }
+
+    }
+}

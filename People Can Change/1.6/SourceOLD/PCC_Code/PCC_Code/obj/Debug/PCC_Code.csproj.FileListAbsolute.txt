@@ -1,0 +1,2 @@
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/1.6/Source/PCC_Code/PCC_Code/obj/Debug/PCC_Code.csproj.AssemblyReference.cache
+/Users/ardenkolodner/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/People Can Change/1.6/Source/PCC_Code/PCC_Code/obj/Debug/PCC_Code.csproj.CoreCompileInputs.cache
