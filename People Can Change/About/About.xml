@@ -1,25 +1,27 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version='1.0' encoding='utf8'?>
 <ModMetaData>
-<supportedVersions><li>1.0</li><li>1.1</li><li>1.2</li><li>1.3</li><li>1.4</li><li>1.5</li><li>1.6</li></supportedVersions>
-<name>People Can Change</name>
-<author>battlemage64</author>
-<packageId>battlemage64.PeopleCanChange</packageId>
-<description>Occasionally, colonists will change their minds about things. They can gain a trait, lose a trait, or have the trait's degree change. This occurs about twice as often as cargo pods drop (or so, everything's random).
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <name>HSK Trait Growth</name>
+  <author>battlemage64</author>
+  <packageId>battlemage64.PeopleCanChange</packageId>
+  <description>HSK-specific trait growth. Requires Core SK and Humanoid Alien Races.
 
-Overview:
-Traits can be gained as long as a colonist doesn't have 4 traits already
-Traits can be lost
-Traits with multiple degrees can change
-
-A few traits won't change, be removed, or be added, for various reasons:
-Beauty traits, annoying voice, and creepy breathing because they're physical traits not psychological, and beauty is already affected by Disfigured. 
-Gay because I don't want to get into a debate about whether sexuality can change like what happened early in RimWorld development.
-Brawler because I personally think Brawler is just stupid and your best shooter becoming a brawler is super annoying.
-Jealous, careful/trigger-happy shooter, and very/neurotic because the game doesn't let me change these ones for some reason. I'll look into them.
-
-Events may cause a colonist to change their ways (e.g. a colonist eats human flesh and discovers they like it, becomes cannibal; or a colonist is depressed for a while and loses trait optimist)
-
-Psychological disorders (treated by someone with good social; if they progress too far lead to mental breaks or suicide)
-
-Comment any bugs or suggestions! (especially bugs)</description>
+Random trait changes, accumulated moods and cannibalism exposure, growth through hardship into Hardened, trait-based skill passions and prosthetic adaptation are handled by one HSK growth component. No legacy People Can Change behaviour or save migration is used. Prosthetic adaptation is derived from People Can Change.
+</description>
+  <modDependencies>
+    <li>
+      <packageId>skyarkhangel.HSK</packageId>
+      <displayName>Core SK</displayName>
+    </li>
+    <li>
+      <packageId>erdelf.HumanoidAlienRaces</packageId>
+      <displayName>Humanoid Alien Races</displayName>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>skyarkhangel.HSK</li>
+    <li>erdelf.HumanoidAlienRaces</li>
+  </loadAfter>
 </ModMetaData>

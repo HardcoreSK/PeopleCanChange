@@ -1,0 +1,72 @@
+<Project>
+  <PropertyGroup>
+    <!-- Keep the selector before SDK imports so restore and generated files use the same version. -->
+    <Version Condition="'$(Version)' == ''">1.6</Version>
+    <BaseIntermediateOutputPath>obj/$(Version)/</BaseIntermediateOutputPath>
+    <DeployToGame Condition="'$(DeployToGame)' == ''">false</DeployToGame>
+    <UpdateAssemblyVersion Condition="'$(UpdateAssemblyVersion)' == ''">false</UpdateAssemblyVersion>
+  </PropertyGroup>
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk"/>
+  <PropertyGroup>
+    <RimWorldDualBuildEnabled>true</RimWorldDualBuildEnabled>
+    <RimWorldVersion>$(Version)</RimWorldVersion>
+    <RimWorldBuildOutputPath>$(MSBuildThisFileDirectory)../../../$(Version)/Assemblies/</RimWorldBuildOutputPath>
+    <RimWorldReferenceVersion Condition="'$(Version)' == '1.6'">1.6.*</RimWorldReferenceVersion>
+    <RimWorldReferenceVersion Condition="'$(Version)' == '1.7'">1.7.4977-alpha.1</RimWorldReferenceVersion>
+    <RimWorldHarmonyVersion Condition="'$(Version)' == '1.6'">2.3.*</RimWorldHarmonyVersion>
+    <RimWorldHarmonyVersion Condition="'$(Version)' == '1.7'">3.0.0-rc.2</RimWorldHarmonyVersion>
+    <DefaultItemExcludes>$(DefaultItemExcludes);obj/**;bin/**</DefaultItemExcludes>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework Condition="'$(Version)' == '1.6'">net48</TargetFramework>
+    <TargetFramework Condition="'$(Version)' == '1.7'">net10.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <LangVersion>preview</LangVersion>
+    <OutputPath>$(RimWorldBuildOutputPath)</OutputPath>
+    <Product>HSK.TraitGrowth</Product>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AssemblyName>HSK.TraitGrowth</AssemblyName>
+    <RootNamespace>HSK.TraitGrowth</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' "/>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <Import Project="Properties\OutputPath.props" Condition="Exists('Properties\OutputPath.props')"/>
+  <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="$(RimWorldReferenceVersion)" PrivateAssets="all" ExcludeAssets="runtime"/>
+    <!-- <PackageReference Include="Lib.Harmony" Version="2.3.*" ExcludeAssets="runtime" Condition="'$(Version)' == '1.6'" />
+    <PackageReference Include="Lib.Harmony" Version="3.0.0-rc.2" ExcludeAssets="runtime" Condition="'$(Version)' == '1.7'" /> -->
+  </ItemGroup>
+  <PropertyGroup>
+    <DefineConstants Condition="'$(Version)' == '1.6'">$(DefineConstants);RW_1_6</DefineConstants>
+    <DefineConstants Condition="'$(Version)' == '1.7'">$(DefineConstants);RW_1_7</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <HSKAssembliesDirectory Condition="'$(HSKAssembliesDirectory)' == ''">$(MSBuildThisFileDirectory)../../../../../Assemblies/</HSKAssembliesDirectory>
+    <CoreSKAssemblyPath Condition="'$(CoreSKAssemblyPath)' == '' and Exists('$(HSKAssembliesDirectory)$(Version)/Core_SK.dll')">$(HSKAssembliesDirectory)$(Version)/Core_SK.dll</CoreSKAssemblyPath>
+    <CoreSKAssemblyPath Condition="'$(CoreSKAssemblyPath)' == ''">$(HSKAssembliesDirectory)Core_SK.dll</CoreSKAssemblyPath>
+    <AlienRaceAssemblyPath Condition="'$(AlienRaceAssemblyPath)' == ''">$(HSKAssembliesDirectory)AlienRace.dll</AlienRaceAssemblyPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Core_SK">
+      <HintPath>$(CoreSKAssemblyPath)</HintPath>
+      <Private>false</Private>
+      <RimWorldPathProperty>CoreSKAssemblyPath</RimWorldPathProperty>
+    </Reference>
+    <Reference Include="AlienRace">
+      <HintPath>$(AlienRaceAssemblyPath)</HintPath>
+      <Private>false</Private>
+      <RimWorldPathProperty>AlienRaceAssemblyPath</RimWorldPathProperty>
+    </Reference>
+  </ItemGroup>
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk"/>
+  <Target Name="ValidateRimWorldBuild" BeforeTargets="PrepareForBuild">
+    <Error Condition="'$(Version)' != '1.6' and '$(Version)' != '1.7'" Text="Unsupported RimWorld version $(Version). Use -p:Version=1.6 or -p:Version=1.7."/>
+    <Error Condition="'%(Reference.HintPath)' != '' and !Exists('%(Reference.HintPath)')" Text="Missing dependency %(Reference.Identity): %(Reference.HintPath). Build it for $(Version), place its DLL in Source/Assemblies, or pass -p:%(Reference.RimWorldPathProperty)=/path/to/dependency.dll."/>
+  </Target>
+</Project>
