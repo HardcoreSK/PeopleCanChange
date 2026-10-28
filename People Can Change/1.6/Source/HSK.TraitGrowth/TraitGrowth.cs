@@ -102,8 +102,23 @@ namespace HSK.TraitGrowth
 
         private static bool AlienDisallows(Pawn pawn, TraitDef def)
         {
-            return pawn.def is ThingDef_AlienRace alien
-                && alien.alienRace.generalSettings.disallowedTraits.Any(entry => entry.entry.def == def);
+            if (pawn == null || def == null
+                || pawn.def is not ThingDef_AlienRace alien
+                || alien.alienRace?.generalSettings?.disallowedTraits == null)
+            {
+                return false;
+            }
+
+            foreach (var entry in alien.alienRace.generalSettings.disallowedTraits)
+            {
+                // AlienChanceEntry.entry is deserialized from XML and can be
+                // null for malformed/legacy race settings.
+                if (entry?.entry?.def == def)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         internal static void Notify(Pawn pawn, IEnumerable<TraitDef> changed)
